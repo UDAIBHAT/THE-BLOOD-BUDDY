@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Request Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff4d4d, #ffffff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            border-top: 5px solid #e60000;
+        }
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #e60000;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group input[type="submit"] {
+            background-color: #e60000;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+        .form-group input[type="submit"]:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Blood Request Form</h2>
+    <form action="r2.php" method="POST">
+        <div class="form-group">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullname" name="FULLNAME" required>
+        </div>
+        <div class="form-group">
+            <label for="contactInfo">Contact Information:</label>
+            <input type="text" id="contactInfo" name="contactinfo" required>
+        </div>
+        <div class="form-group">
+            <label for="bloodGroup">Blood Group:</label>
+            <select id="bloodGroup" name="bloodgroup" required>
+                <option value="">Select Blood Group</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="urgency">Urgency:</label>
+            <select id="urgency" name="urgency" required>
+                <option value="">Select Urgency</option>
+                <option value="urgent">Urgent</option>
+                <option value="not-urgent">Not Urgent</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="additionalInfo">Additional Information:</label>
+            <textarea id="additionalInfo" name="additionalInfo"></textarea>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Submit Request" name="submitt">
+        </div>
+    </form>
+</div>
+<script>
+  
+    window.onload = function() {
+        document.body.style.overflow = "auto"; // Enable scrolling
+    };
+</script>
+
+</body>
+</html>
